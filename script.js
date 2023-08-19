@@ -17,14 +17,14 @@ async function fetchnews(query)
 function bindData(articles)
 {
     cardContainer.innerHTML='';
-    articles.forEach(article => {
-        if (!article.urlToImage)
+    articles.forEach(articles => {
+        if (!articles.urlToImage)
          {
             return;
         }
         const cardClone =newsTemp.content.cloneNode(true);
         
-        fillDataInCard(cardClone,article); 
+        fillDataInCard(cardClone,articles); 
         cardContainer.appendChild(cardClone)
 
     });
@@ -33,7 +33,7 @@ function bindData(articles)
 }
 
 
-function fillDataInCard(cardClone,article)
+function fillDataInCard(cardClone,articles)
 {
     const newsImg = cardClone.querySelector('.news_image');
     const newsTItle = cardClone.querySelector('.news_title');
@@ -41,19 +41,19 @@ function fillDataInCard(cardClone,article)
     const newsDisc = cardClone.querySelector('.new_disc');
 
     
-    const date = new Date(article.publishedAt).toLocaleString("en-us",  {
+    const date = new Date(articles.publishedAt).toLocaleString("en-us",  {
           timeZone: "Asia/jakarta"  })
 
 
 
-    newsSrc.innerHTML =  `${article.source.name} ${date}`; 
-    newsTItle.innerHTML = article.title;
-    newsDisc.innerHTML =  article.description
+    newsSrc.innerHTML =  `${articles.source.name} ${date}`; 
+    newsTItle.innerHTML = articles.title;
+    newsDisc.innerHTML =  articles.description
 
-    newsImg.src = article.urlToImage;
+    newsImg.src = articles.urlToImage;
     cardClone.firstElementChild.addEventListener('click', ()=>
     {
-        window.open(article.url, "_black")
+        window.open(articles.url, "_black")
 
     })
 }
