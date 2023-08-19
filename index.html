@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News-Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+
+        <nav>
+
+            <img src="logo.png" alt="">
+            <div>
+                <ul>
+
+                    <li class="nav-items" id="ipl" onclick="onNavItem ('ipl')"  >Ipl</li>
+                    <li class="nav-items" id="Finance" onclick="onNavItem ('Finance')" >Finance</li>
+                    <li class="nav-items" id="Game" onclick="onNavItem ('Game')" >Game</li>
+                    <li class="nav-items" id="Technology" onclick="onNavItem ('Technology')" >Technology</li>
+
+                </ul>
+            </div>
+
+
+            <div>
+                <input id="News_input" class="search_input" type="text" placeholder="For example:- Science">
+                <button id="search_btn" class="search">search</button>
+            </div>
+        </nav>
+
+
+        <main>
+            <div class="card_container container " id="Cards_container">
+               
+
+            </div>
+        </main>
+      <template id="template_card">
+        <div class="card">
+            <div class="card_header">
+                <img class="news_image" src="https://via.placeholder.com/360x200" alt="">
+
+            </div>
+            <div class="card_content">
+                <h3 class="news_title">THis is the title</h3>
+                <h6 class="news_src" >Dated 19/08/2023</h6>
+                <p class="new_disc" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat cum est illo expedita nihil! Perferendis sint animi nulla doloribus fuga?</p>
+
+            </div>
+
+        </div>
+      </template>
+
+
+
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
